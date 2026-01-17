@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <title>Signup</title>
+  </head>
+
+  <body>
+    <section class="flex md:flex-row flex-col" id="signup-section">
+      <div>
+        <img
+          src="./asset/img/quiz-logo.png"
+          alt="quiz-logo"
+          class="md:w-[70%] w-full md:h-[100vh] h-[60%] mx-auto md:mx-0 md:object-cover"
+        />
+      </div>
+      <form action="" class="md:w-[30%] w-[95%] mx-auto md:ml-[-10%] mb-5" id="sign-up-form">
+        <img src="./asset/img/quiz.png" alt="quiz" class="w-[200px] mt-6 ml-[20%]" />
+        <h2 class="text-3xl font-bold mt-3 mb-2">Sign Up</h2>
+        <p class="mb-6 text-gray-500">Create an account to start your quiz journey</p>
+        <div class="mb-8 text-lg">
+          <input
+            type="text"
+            placeholder="Username"
+            class="w-full border-0 border-b border-gray-400 focus:border-blue-500 focus:outline-none bg-transparent py-2"
+            id="username"
+          />
+        </div>
+          <div class="mb-8 font-normal text-lg">
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full border-0 border-b border-gray-400 focus:border-blue-500 focus:outline-none bg-transparent py-2"
+              id="email"
+            />
+          </div>
+          <div class="mb-8 text-lg">
+            <input
+              type="password"
+              placeholder="Password"
+              class="w-full border-0 border-b border-gray-400 focus:border-blue-500 focus:outline-none bg-transparent py-2"
+              id="password"
+            />
+          </div>
+          <p id="errormsg" class="text-center"></p>
+          <button
+            type="submit"
+            class="w-full bg-black text-white py-3 rounded-3xl font-bold mb-4"
+            id="signup-btn"
+            onclick="saveData()"
+          >
+            Sign Up
+          </button>
+          <p class="text-center text-gray-500">
+            Already have an account?
+            <span class="text-blue-500 hover:underline cursor-pointer" id="login-bttn">Log In</span>
+          </p>
+        </form>
+    </section> 
+
+    <section class="flex md:flex-row flex-col-reverse hidden" id="login-section">
+      <form action="" class="md:w-[50%] w-[95%] mx-auto mb-5 md:mx-[5%]" id="login-form">
+        <img src="./asset/img/quiz.png" alt="quiz" class="w-[200px] mt-6 ml-[20%]" />
+        <h2 class="text-3xl font-bold mt-3 mb-2">Log In</h2>
+        <p class="mb-6 text-gray-500">Login to continue your quiz</p>
+        <div class="mb-8 text-lg">
+        </div>
+          <div class="mb-10 font-normal text-lg">
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full border-0 border-b border-gray-400 focus:border-blue-500 focus:outline-none bg-transparent py-2"
+              id="login-email"
+            />
+          </div>
+          <div class="mb-8 text-lg">
+            <input
+              type="password"
+              placeholder="Password"
+              class="w-full border-0 border-b border-gray-400 focus:border-blue-500 focus:outline-none bg-transparent py-2"
+              id="login-password"
+            />
+          </div>
+          <p id="login-errormsg" class="text-center"></p>
+          <button
+            type="submit"
+            class="w-full bg-black text-white py-3 rounded-3xl font-bold mb-4"
+            id="login-btn"
+          >
+            Log In
+          </button>
+          <p class="text-center text-gray-500">
+            Don't have an account?
+            <span class="text-blue-500 hover:underline cursor-pointer" id="signup-bttn">Sign Up</span>
+          </p>
+        </form>
+
+        <div class="40%">
+        <img
+          src="./asset/img/quiz-logo.png"
+          alt="quiz-logo"
+          class="md:w-[100%] w-full md:h-[100vh] h-[60%] mx-auto md:mx-0 md:object-cover"
+        />
+        </div>
+    </section>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>

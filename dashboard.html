@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <title>Quiz</title>
+  </head>
+  <body class="bg-white dark:bg-black transition">
+    <header
+      class="flex justify-between bg-white dark:bg-black px-[30px] border-b border-gray-200 py-[20px] items-center sticky top-0 z-10"
+    >
+      <h1 class="text-3xl font-semibold dark:text-white text-black">
+        Quiz Master
+      </h1>
+      <button id="toggle" class="px-3 py-2 border rounded">🌙</button>
+    </header>
+
+    <main>
+      <section>
+        <h2
+          class="text-center text-3xl font-semibold text-black dark:text-white"
+        >
+          Quiz Master
+        </h2>
+        <p class="text-gray-500 dark:text-gray-400 text-center">
+          Choose a category to begin your challenge
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+          <div class="w-full border border-gray-400 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+            <span class="flex gap-4 items-center">
+              <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
+                <i
+                  class="fa fa-book text-gray-700 text-2xl"
+                  aria-hidden="true"
+                ></i>
+              </p>
+              <h3 class="text-black dark:text-gray-300 font-bold">
+                General knowledge
+              </h3>
+            </span>
+            <p class="text-gray-500 font-normal font-sans">
+              Test your knowledge across various topics
+            </p>
+            <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="general">Start Quiz (10 questions)</button>
+          </div>
+
+          <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+            <span class="flex gap-4 items-center">
+              <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
+                <i
+                  class="fa fa-flask text-gray-700 text-2xl"
+                  aria-hidden="true"
+                ></i>
+              </p>
+              <h3 class="text-black dark:text-gray-300 font-bold">
+                Science
+              </h3>
+            </span>
+            <p class="text-gray-500 font-normal font-sans">
+              Physics, Chemistry, Biology and more
+            </p>
+            <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="science">Start Quiz (10 questions)</button>
+          </div>
+
+          <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+            <span class="flex gap-4 items-center">
+              <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
+                <i
+                  class="fa fa-code text-gray-700 text-2xl"
+                  aria-hidden="true"
+                ></i>
+              </p>
+              <h3 class="text-black dark:text-gray-300 font-bold">
+                Technology
+              </h3>
+            </span>
+            <p class="text-gray-500 font-normal font-sans">
+              Programming, gadgets, and tech trends
+            </p>
+            <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="tech">Start Quiz (10 questions)</button>
+          </div>
+          
+          <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+            <span class="flex gap-4 items-center">
+              <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
+                <i
+                  class="fa fa-globe text-gray-700 text-2xl"
+                  aria-hidden="true"
+                ></i>
+              </p>
+              <h3 class="text-black dark:text-gray-300 font-bold">
+                Geography
+              </h3>
+            </span>
+            <p class="text-gray-500 font-normal font-sans">
+              Countries, capitals, and landmarks
+            </p>
+            <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="geo">Start Quiz (10 questions)</button>
+          </div>
+
+          <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+            <span class="flex gap-4 items-center">
+              <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
+                <i
+                  class="fa fa-book text-gray-700 text-2xl"
+                  aria-hidden="true"
+                ></i>
+              </p>
+              <h3 class="text-black dark:text-gray-300 font-bold">
+                Art & Culture
+              </h3>
+            </span>
+            <p class="text-gray-500 font-normal font-sans">
+              Artists, movements, and masterpieces
+            </p>
+            <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="art">Start Quiz (10 questions)</button>
+          </div>
+
+          <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
+            <span class="flex gap-4 items-center">
+              <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
+                <i
+                  class="fa fa-music text-gray-700 text-2xl"
+                  aria-hidden="true"
+                ></i>
+              </p>
+              <h3 class="text-black dark:text-gray-300 font-bold">
+                Music
+              </h3>
+            </span>
+            <p class="text-gray-500 font-normal font-sans">
+              Artists, genres, and musical history
+            </p>
+            <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="music">Start Quiz (10 questions)</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>
