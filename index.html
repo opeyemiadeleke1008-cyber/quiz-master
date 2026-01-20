@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ============ INDEX.HTML (SIGNUP / LOGIN) ============ -->
+
+<!-- --- head: Meta, favicon, FontAwesome, Tailwind, darkMode -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./asset/img/quiz.png" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -14,7 +18,9 @@
     <title>Signup</title>
   </head>
 
+  <!-- --- body: Signup/Login page container -->
   <body>
+    <!-- --- signup-section: Logo, sign-up form, errormsg, login link -->
     <section class="flex md:flex-row flex-col" id="signup-section">
       <div>
         <img
@@ -65,9 +71,11 @@
             <span class="text-blue-500 hover:underline cursor-pointer" id="login-bttn">Log In</span>
           </p>
         </form>
-    </section> 
+    </section>
 
+    <!-- --- login-section: Login form, logo; hidden by default -->
     <section class="flex md:flex-row flex-col-reverse hidden" id="login-section">
+      <!-- --- login-form: login-email, login-password, login-btn, loginUser on submit -->
       <form action="" class="md:w-[50%] w-[95%] mx-auto mb-5 md:mx-[5%]" id="login-form">
         <img src="./asset/img/quiz.png" alt="quiz" class="w-[200px] mt-6 ml-[20%]" />
         <h2 class="text-3xl font-bold mt-3 mb-2">Log In</h2>
@@ -113,6 +121,7 @@
         </div>
     </section>
 
+    <!-- --- script: index.js (Firebase, saveData, getData, loginUser, signup/login forms) -->
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

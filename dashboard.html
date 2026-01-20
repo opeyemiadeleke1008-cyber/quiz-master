@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./asset/img/quiz-logo.png" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -13,7 +14,10 @@
     </script>
     <title>Quiz</title>
   </head>
+
+  <!-- --- body: Dashboard page container -->
   <body class="bg-white dark:bg-black transition">
+    <!-- --- header: Title, dark mode toggle -->
     <header
       class="flex justify-between bg-white dark:bg-black px-[30px] border-b border-gray-200 py-[20px] items-center sticky top-0 z-10"
     >
@@ -34,7 +38,9 @@
           Choose a category to begin your challenge
         </p>
 
+        <!-- --- category-grid: Cards with id=general, science, tech, geo, art, music -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+          <!-- --- card: General knowledge -->
           <div class="w-full border border-gray-400 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
             <span class="flex gap-4 items-center">
               <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
@@ -53,6 +59,7 @@
             <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="general">Start Quiz (10 questions)</button>
           </div>
 
+          <!-- --- card: Science -->
           <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
             <span class="flex gap-4 items-center">
               <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
@@ -71,6 +78,7 @@
             <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="science">Start Quiz (10 questions)</button>
           </div>
 
+          <!-- --- card: Technology -->
           <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
             <span class="flex gap-4 items-center">
               <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
@@ -107,6 +115,7 @@
             <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="geo">Start Quiz (10 questions)</button>
           </div>
 
+          <!-- --- card: Art & Culture -->
           <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
             <span class="flex gap-4 items-center">
               <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
@@ -125,6 +134,7 @@
             <button class="bg-black text-white dark:bg-gray-100 dark:text-black font-bold w-full rounded-lg py-2" id="art">Start Quiz (10 questions)</button>
           </div>
 
+          <!-- --- card: Music -->
           <div class="w-full border border-gray-500 dark:border-gray-200 rounded-lg p-4 flex flex-col gap-4">
             <span class="flex gap-4 items-center">
               <p class="text-center bg-gray-200 py-2 px-3 rounded-lg">
@@ -146,6 +156,7 @@
       </section>
     </main>
 
+    <!-- --- script: dashboard.js (dark mode, category nav) -->
     <script src="./js/dashboard.js"></script>
   </body>
 </html>

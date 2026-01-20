@@ -1,9 +1,9 @@
-// Import the functions you need from the SDKs you need
+// ============ INDEX.JS - FIREBASE IMPORTS ============
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Your web app's Firebase configuration
+// ============ INDEX.JS - FIREBASE CONFIG ============
 const firebaseConfig = {
   apiKey: "AIzaSyBj7S69wR_gLkZhPfCQ5YT6-S47ufhXRG0",
   authDomain: "quiz-master-b5c9d.firebaseapp.com",
@@ -14,14 +14,13 @@ const firebaseConfig = {
   measurementId: "G-WHJBZKC0CM"
 };
 
-// Initialize Firebase
+// ============ INDEX.JS - FIREBASE INIT ============
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
-// Connect Firestore
 const db = getFirestore(app);
 
-// Save Data
+// ============ INDEX.JS - FIREBASE / FIRESTORE ============
+// --- saveData: Saves new user to Firestore "users" collection
 window.saveData = async (username, email, password) => {
   try {
     await addDoc(collection(db, "users"), {
@@ -36,7 +35,7 @@ window.saveData = async (username, email, password) => {
   }
 };
 
-// Get all users
+// --- getData: Fetches all users from Firestore "users" collection
 async function getData() {
   try {
     const querySnapshot = await getDocs(collection(db, "users"));
@@ -51,7 +50,7 @@ async function getData() {
   }
 }
 
-// Login function
+// --- loginUser: Validates email/password against Firestore users
 window.loginUser = async (email, password) => {
   try {
     const users = await getData();
@@ -70,6 +69,8 @@ window.loginUser = async (email, password) => {
   }
 };
 
+// ============ INDEX.JS - SIGNUP FORM HANDLER ============
+// --- signupFormSubmit: Validate, save user, redirect to dashboard
 document.getElementById("sign-up-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const username = document.getElementById("username").value.trim();
@@ -109,16 +110,20 @@ document.getElementById("sign-up-form").addEventListener("submit", async (e) => 
   }, 2000);
 });
 
+// ============ INDEX.JS - LOGIN/SIGNUP TOGGLE ============
+// --- showLoginSection: Hide signup, show login form
 document.getElementById("login-bttn").addEventListener("click", () => {
   document.getElementById("signup-section").classList.add("hidden");
   document.getElementById("login-section").classList.remove("hidden");
 });
+// --- showSignupSection: Hide login, show signup form
 document.getElementById("signup-bttn").addEventListener("click", () => {
   document.getElementById("login-section").classList.add("hidden");
   document.getElementById("signup-section").classList.remove("hidden");
 });
 
-// Login form handler
+// ============ INDEX.JS - LOGIN FORM HANDLER ============
+// --- loginFormSubmit: Validate, loginUser, store in localStorage, redirect
 const loginForm = document.getElementById("login-form");
 if (loginForm) {
   loginForm.addEventListener("submit", async (e) => {
